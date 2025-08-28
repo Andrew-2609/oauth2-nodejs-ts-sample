@@ -1,0 +1,6 @@
+# Environment
+.env
+
+# Generated
+node_modules/
+dist/
