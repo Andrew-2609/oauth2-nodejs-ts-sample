@@ -53,6 +53,38 @@ The `/` is also the target of the logout workflow, but currently logout is autom
 
 ---
 
+## Screenshots!
+
+If you don't want to run the project, here's how it looks:
+
+### Landing Page (unlogged)
+
+<img width="3432" height="1838" alt="image" src="https://github.com/user-attachments/assets/c57ee1b2-f83d-46f2-8281-cd17412f3a10" />
+
+### Login Page
+
+<img width="3456" height="1842" alt="image" src="https://github.com/user-attachments/assets/589da555-37ba-445c-a792-afcb7946dd63" />
+
+### Langing Page (logged using Google)
+
+<img width="3454" height="1840" alt="image" src="https://github.com/user-attachments/assets/a4980efa-5e9d-49c9-bd08-33e9f6bf2503" />
+
+### Profile
+
+<img width="3434" height="1838" alt="image" src="https://github.com/user-attachments/assets/ba826571-e4ca-45cb-ae1a-5d7e2092e5a8" />
+
+### Internal Stuff
+
+Now, in order to add and get users to/from the application's memory, I simply converted the email to a **v5 UUID** using the user's email as the value and a predefined namespace, which you can define through the environment variables or simply use the default one in `env.ts`. The same value and namespace result in the same UUID, so we can safely verify if the user exists in our database, and if not, persist it. Naturally, this is just for the sake of simplicity, but believe me – there are many scenarios in which deterministic UUIDs come in handy!
+
+#### After logging in for the first time
+
+<img width="1632" height="128" alt="image" src="https://github.com/user-attachments/assets/77c0bb16-193c-4754-8397-4f09417bb02c" />
+
+#### After logging out and in again
+
+<img width="1566" height="378" alt="image" src="https://github.com/user-attachments/assets/351de3f9-17cd-4224-a7f8-4c47329dced7" />
+
 ## Final Considerations
 
 Thanks a lot for reading so far. I really hope that this project is useful to you somehow. As final considerations, you probably noticed I tried to put some DDD concepts on top of the core point of this PR, just for the sake of practicing I guess. Naturally, a presentation layer with controllers, a data layer with use cases, and an actual persistent (or at least distributed in-memory) database would also be required, but you probably figured that already!
