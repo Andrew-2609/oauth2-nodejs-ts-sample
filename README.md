@@ -65,7 +65,7 @@ If you don't want to run the project, here's how it looks:
 
 <img width="3456" height="1842" alt="image" src="https://github.com/user-attachments/assets/589da555-37ba-445c-a792-afcb7946dd63" />
 
-### Langing Page (logged using Google)
+### Landing Page (logged in using Google)
 
 <img width="3454" height="1840" alt="image" src="https://github.com/user-attachments/assets/a4980efa-5e9d-49c9-bd08-33e9f6bf2503" />
 
