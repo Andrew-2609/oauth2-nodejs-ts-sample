@@ -56,8 +56,14 @@ export const setupRoutes = (app: Express): void => {
       return;
     }
 
+    const {
+      sid: _sid,
+      sub: _sub,
+      ...nonSensitiveUserData
+    } = req.oidc.user ?? {};
+
     res.render("profile", {
-      user: req.oidc.user,
+      user: nonSensitiveUserData,
     });
   });
 };
