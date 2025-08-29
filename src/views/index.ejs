@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth 2.0 Demo</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>OAuth 2.0 Demo</h1>
+        <% if (isAuthenticated) { %>
+            <p>Hello, <%= user.getName() %>!</p>
+            <div class="link-list">
+              <a href="/profile">View Profile</a>
+              <a href="/logout">Logout</a>
+            </div>
+        <% } else { %>
+            <p>Please log in to continue.</p>
+            <a href="/login">Login with Auth0</a>
+        <% } %>
+    </div>
+</body>
+</html>

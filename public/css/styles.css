@@ -1,0 +1,73 @@
+:root {
+    --primary-dark: #082c30;
+    --accent-color: #31aead;
+    --container-bg: #f7f9fc;
+    --text-color: #333;
+}
+
+body {
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        Arial, sans-serif;
+    background-color: var(--primary-dark);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* This is the key change for vertical centering */
+    justify-content: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+h1 {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding: 2.5rem; /* Increased padding for more space */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: var(--container-bg);
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    border: 2px solid var(--accent-color);
+    background-color: #fff;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+a:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.link-list {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+pre {
+    text-align: left;
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

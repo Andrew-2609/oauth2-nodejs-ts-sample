@@ -7,14 +7,14 @@ import { v5 as uuid } from "uuid";
 export const setupRoutes = (app: Express): void => {
   app.get("/", async (req, res) => {
     if (!req.oidc.isAuthenticated()) {
-      res.send(`
-        <h1>OAuth 2.0 Example for Raidiam!</h1>
-        <a href="/login">Login with Auth0</a>
-      `);
+      res.render("index", {
+        isAuthenticated: false,
+      });
       return;
     }
 
     if (!req.oidc.user) {
+      console.log("this should never happen in this sample!");
       res.status(500).send(`<h1>No user present in OIDC</h1>`);
       return;
     }
@@ -44,14 +44,10 @@ export const setupRoutes = (app: Express): void => {
       console.log(`successfully found user ${user.getId()} by their email!`);
     }
 
-    res.send(`
-      <h1>OAuth 2.0 Example for Raidiam!</h1>
-      ${`
-        <p>Hello, ${user.getName()}!</p>
-        <p>You can see your user profile <a href="/profile">here!</a></p>
-        <a href="/logout">Logout</a>
-      `}
-    `);
+    res.render("index", {
+      isAuthenticated: true,
+      user,
+    });
   });
 
   app.get("/profile", (req, res) => {
@@ -60,10 +56,8 @@ export const setupRoutes = (app: Express): void => {
       return;
     }
 
-    res.send(`
-      <h2>User Profile</h2>
-      <pre>${JSON.stringify(req.oidc.user, null, 2)}</pre>
-      <a href="/">Go back to home</a>
-    `);
+    res.render("profile", {
+      user: req.oidc.user,
+    });
   });
 };
